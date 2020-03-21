@@ -1,0 +1,36 @@
+{
+  "name": "android-usb-tester",
+  "version": "0.0.1",
+  "description": "Use to test android usb printer",
+  "productName": "Android USB Tester",
+  "cordovaId": "com.feedmepos.sandboxusbprinter",
+  "capacitorId": "",
+  "author": "Lo King Wei <kiwi198@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue src",
+    "test": "echo \"No test specified\" && exit 0",
+    "sign": "rm usb-printer-tester.apk & jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore feedme.keystore -storetype JKS -storepass Qwer1234@ -keypass Qwer1234@ dist/cordova/android/apk/release/app-release-unsigned.apk app.feedmepos.com & zipalign -v 4 dist/cordova/android/apk/release/app-release-unsigned.apk usb-printer-tester.apk"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "escpos": "^2.5.2",
+    "quasar": "^1.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app": "^1.0.0",
+    "@vue/eslint-config-prettier": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.10.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^5.0.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+  },
+  "browserslist": [
+    "last 1 version, not dead, ie >= 11"
+  ]
+}
